@@ -1,4 +1,4 @@
-const Card = require('./card');
+const Card = require('./card'); ['♠', '♥', '♦', '♣']
 
 // representation of a deck of standard (52) playing cards
 const Deck = function () {

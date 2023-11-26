@@ -15,59 +15,60 @@
 </head>
 
 <body>
-	<header>
-		<div class="navbar-fixed" id="navbar-ptwu">
-			<nav class="grey darken-4" role="navigation" id="navbar">
-				<a href="https://peterlwu.com" class="brand-logo center"><img class="responsive-img hover-item-2"
-						src="https://i.imgur.com/aICJn1m.png" width="64" height="64"></img></a>
-			</nav>
-		</div>
-	</header>
 	<div id="gameDiv">
 		<h4 class="white-text">Texas Hold 'Em Game</h4>
 		<div class="row">
 			<div class="col s12 m3">
-				<div id="playerInformationCard" class="card green darken-2">
+				<div id="playerInformationCard" class="card custom-card">
 					<div class="card-content white-text">
 						<span class="card-title" id="usernamesCards"></span>
 						<div id="mycards"></div>
 					</div>
 				</div>
 			</div>
-			<div class="col s12 m2">
-				<div class="card green darken-2">
-					<div class="card-content white-text center-align">
-						<span class="card-title center-align" id="usernamesMoney"></span>
-						<div id="blindStatus"></div>
-						<div id="status"></div>
-						<br />
-						<div id="playNext"></div>
-						<button onClick=fold() id="usernameFold" class="btn white black-text menuButtons">Fold</button>
-						<br />
-						<button onClick=check() id="usernameCheck" class="btn white black-text menuButtons">Check</button>
-						<br />
-						<button href="#betModal" onClick=updateBetModal() id="usernameBet"
-							class="btn white black-text modal-trigger menuButtons">Bet</button>
-						<br />
-						<button onClick=call() id="usernameCall" class="btn white black-text menuButtons">Call</button>
-						<br />
-						<button href="#raiseModal" onClick=updateRaiseModal() id="usernameRaise"
-							class="btn white black-text modal-trigger menuButtons">Raise</button>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m7">
-				<div class="card green darken-2">
-					<div class="card-content white-text">
-						<span id="table-title" class="card-title"></span>
+			<!--Action box used to be here-->
 
-						<div id="communityCards"></div>
+
+
+			<!-- Status card used to be here -->
+			<div class="row">
+				<div class="col s12 m6">
+						<div class="card custom-card">
+							<div class="card-content white-text">
+								<span id="table-title" class="card-title"></span>
+								<div id="communityCards"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col s12 m2">
+					<div class="card custom-card">
+						<div class="card-content white-text center-align">
+							<span class="card-title center-align" id="usernamesMoney"></span>
+							<div id="blindStatus"></div>
+							<div id="status"></div>
+							<br />
+							<div id="playNext"></div>
+							<button onClick=fold() id="usernameFold"
+								class="btn white black-text menuButtons">Fold</button>
+							<br />
+							<button onClick=check() id="usernameCheck"
+								class="btn white black-text menuButtons">Check</button>
+							<br />
+							<button href="#betModal" onClick=updateBetModal() id="usernameBet"
+								class="btn white black-text modal-trigger menuButtons">Bet</button>
+							<br />
+							<button onClick=call() id="usernameCall"
+								class="btn white black-text menuButtons">Call</button>
+							<br />
+							<button href="#raiseModal" onClick=updateRaiseModal() id="usernameRaise"
+								class="btn white black-text modal-trigger menuButtons">Raise</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div id="opponentCards"></div>
+			<div class="row">
+				<div id="opponentCards"></div>
+			</div>
 		</div>
 	</div>
 	<div id="mainContent">
@@ -76,14 +77,17 @@
 				<form>
 					<div class="card-content">
 						<span class="card-title black-text">Texas Hold &apos;Em Poker - Distributed</span>
-						<p>Welcome to Texas Hold &apos;Em Poker! Host a game and give the code to friends so they can join and play.
+						<p>Welcome to Texas Hold &apos;Em Poker! Host a game and give the code to friends so they can
+							join and play.
 						</p>
 					</div>
 					<div class="card-action center-align">
-						<a id="hostButton" class="btn-large waves-effect waves-light indigo darken-3 white-text modal-trigger"
+						<a id="hostButton"
+							class="btn-large waves-effect waves-light indigo darken-3 white-text modal-trigger"
 							href="#hostModal">Host
 							Game</a>
-						<a id="joinButton" class="btn-large waves-effect waves-light indigo darken-3 white-text modal-trigger"
+						<a id="joinButton"
+							class="btn-large waves-effect waves-light indigo darken-3 white-text modal-trigger"
 							href="#joinModal">Join
 							Game</a>
 					</div>
@@ -168,7 +172,8 @@
 					<h4>Drag the slider to raise the current top bet!</h4>
 				</div>
 				<p class="range-field">
-					<input type="range" id="raiseRangeSlider" min="0" max="100" value="0" onchange=updateRaiseDisplay() />
+					<input type="range" id="raiseRangeSlider" min="0" max="100" value="0"
+						onchange=updateRaiseDisplay() />
 				</p>
 			</form>
 			<br />
@@ -180,10 +185,6 @@
 			<a href="#!" class="modal-close waves-effect waves-light btn-flat">CLOSE</a>
 		</div>
 	</div>
-	<footer class="page-footer white">
-		<div class="container footer-c">
-			<b>© 2020 - Peter Wu. <a href="https://github.com/ptwu/distributed-texasholdem">GitHub Repository</a></b><br><br>
-	</footer>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.5.0/socket.io.min.js"></script>

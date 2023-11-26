@@ -597,7 +597,7 @@ const Game = function (name, host) {
   };
 
   this.revealCards = (winners) => {
-    this.log('revealllllll');
+    this.log('reveal');
     this.roundInProgress = false;
     let cardData = [];
     for (let i = 0; i < this.players.length; i++) {

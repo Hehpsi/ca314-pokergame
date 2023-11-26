@@ -1,14 +1,12 @@
 @font-face {
   font-family: Metropolis-Medium;
-  src: url("font/Metropolis-Medium.otf"),
-    url("font/Metropolis-Medium.otf") format("opentype");
+  src: url("font/Metropolis-Medium.otf"), url("font/Metropolis-Medium.otf") format("opentype");
 }
 
 @font-face {
   font-family: Metropolis-Bold;
   font-weight: bold;
-  src: url("font/Metropolis-Bold.otf"),
-    url("font/Metropolis-Bold.otf") format("opentype");
+  src: url("font/Metropolis-Bold.otf"), url("font/Metropolis-Bold.otf") format("opentype");
 }
 
 #mainContent {
@@ -26,7 +24,8 @@
 html,
 body,
 .login-box {
-  background: #2e64bc;
+  background: url('/images/background/poker.png') no-repeat center center fixed;
+  background-size: cover;
   height: 95%;
 }
 
@@ -116,17 +115,12 @@ code {
 
 .blankCard {
   float: left;
-  background: repeating-linear-gradient(
-    45deg,
-    #606dbc,
-    #606dbc 10px,
-    #465298 10px,
-    #465298 20px
-  );
-  border: 5px solid black;
+  background: url('/images/cards/BackCard.png') no-repeat center center;
+  background-size: cover; /* This will ensure that the background covers the entire element */
+  border: none; /* Removing the border as per your previous request */
   border-radius: 5px;
-  height: 84px;
-  width: 60px;
+  height: 84px; /* You may adjust this depending on the aspect ratio of your card image */
+  width: 60px; /* You may adjust this depending on the aspect ratio of your card image */
   padding: 10px;
   margin: 4px;
 }
@@ -147,4 +141,50 @@ code {
 .toast {
   position: relative;
   z-index: -1 !important;
+}
+
+.playingCard_black, .playingCard_red {
+  width: 100px; /* or any size you want */
+  height: 140px; /* or any size you want */
+  display: inline-block; /* to contain the image */
+  background-color: transparent; /* Remove the white background */
+  border: none; /* Remove the boarder */
+}
+
+.playingCard_black img, .playingCard_red img {
+  max-width: 100%;
+  height: auto;
+}
+
+.custom-card {
+  background-color: #ff0000; 
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines as needed */
+  margin: 10px 0;
+}
+
+/* Community Cards Section - Adjust width for different screen sizes */
+.community-cards {
+  flex: 1 1 auto; /* Allow it to grow and shrink */
+  max-width: 70%; /* Adjust as needed */
+}
+
+/* Status Card Section - Make it more responsive */
+.smaller-status-card {
+  flex: 1 0 25%; /* Allow it to shrink but not grow, with a base width */
+  margin-left: 20px; /* Space between cards */
+  max-width: 25%; /* Max width to control size */
+}
+
+/* Ensure that on smaller screens, the layout stacks vertically */
+@media screen and (max-width: 768px) {
+  .community-cards,
+  .smaller-status-card {
+      flex: 1 0 100%; /* Take full width on small screens */
+      max-width: 100%; /* Full width */
+      margin-left: 0;
+  }
 }
